@@ -9,7 +9,7 @@ public class Rectangle {
 	private int height;
 	private Color color;
 
-	public Rectangle(Point topLeft, int width, int height, Color color){
+	public Rectangle(int x, int y, int width, int height, Color color){
 		this.topLeft = new Point(x,y);
 		this.width = width;
 		this.height = height;
@@ -18,7 +18,7 @@ public class Rectangle {
 
 	public void draw(Graphics g){
 		g.setColor(color);
-		g.fillRect(x,y,width,height);
+		g.fillRect(this.topLeft.x(),this.topLeft.y(),width,height);
 	} 
 
 }
