@@ -10,20 +10,19 @@ public class AmericanFlag{
 
 	public AmericanFlag(int x, int y, int scale){
 		this.scale = scale;
-		this.union = new Rectangle(x,(y+10),(scale*99),(scale*70), Color.blue);
+		this.union = new Rectangle(x,(y+(int)(this.scale*10)),(int)(this.scale*99),(int)(this.scale*70), Color.blue);
 		this.stripes = new Rectangle[13];
 		
 		for (int i = 0; i < 13 ; i++ ) {
 			if (i % 2 == 0) {
-				stripes[i] = new Rectangle(x, (i + 1) * 10 + y, (int)(scale * 247),(int)(scale * 10), Color.red);
-						
+				stripes[i] = new Rectangle(x, (int)((i + 1) * this.scale*10 + y), (int)(this.scale * 247),(int)(this.scale * 10), Color.red);		
 			}else{
-				stripes[i] = new Rectangle(x, (i + 1) * 10 +y, (int)(scale * 247),(int)(scale * 10), Color.white);
-			}		
+				stripes[i] = new Rectangle(x, (int)((i + 1) * this.scale*10 + y), (int)(this.scale * 247),(int)(this.scale * 10), Color.white);
+			}
 		}
 	}
 
-	public void draw(Graphics g){
+	public void draw(Graphics g) {
 		for (int i = 0; i < 13; i++) {
 			stripes[i].draw(g);
 		}
